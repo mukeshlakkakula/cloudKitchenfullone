@@ -24,7 +24,7 @@ const Fooditems = () => {
         "Content-Type": "application/json",
       },
     };
-    let url = "http://localhost:5000/api/fooditems";
+    let url = "https://cloud-kitchenfullone.vercel.app/fooditems";
     const response = await fetch(url, options);
     const data = await response.json();
 
