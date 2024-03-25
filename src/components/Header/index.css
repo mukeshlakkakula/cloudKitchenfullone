@@ -1,0 +1,82 @@
+.headerContainer {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 5px;
+  background-color: #f0f1f2;
+}
+
+.lgoutBtn {
+  border-radius: 5px;
+  background-color: transparent;
+  font-weight: bold;
+  color: rgb(186, 82, 82);
+}
+
+.activeBtn {
+  color: rgb(38, 38, 77);
+  font-weight: bold;
+
+  background-color: transparent;
+  border-color: red;
+
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.notActiveBtn {
+  font-weight: bold;
+  color: #696969;
+  border-style: none;
+  background-color: transparent;
+}
+
+.headerInnerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 60%;
+}
+
+.loSinContainer {
+  display: flex;
+
+  width: 90%;
+  gap: 10%;
+  justify-content: flex-end;
+}
+
+@media (max-width: 786px) {
+  .activeBtn {
+    font-size: 12px;
+  }
+
+  .lgoutBtn {
+    font-size: 12px;
+  }
+
+  .headerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 2px;
+    padding-right: 2px;
+    gap: 10px;
+    margin-bottom: 5px;
+  }
+  .notActiveBtn {
+    font-size: 12px;
+  }
+
+  .imgLogosm {
+    width: 60px !important;
+  }
+  .loSinContainer {
+    width: 70%;
+  }
+}

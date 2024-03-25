@@ -1,0 +1,27 @@
+.imageCoroselContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #120809;
+}
+
+.carousel {
+  object-fit: cover;
+  width: 100%;
+  height: 70vh;
+
+  background-color: transparent;
+}
+
+@media (max-width: 786px) {
+  .carousel {
+    width: 100vw;
+    height: 200px;
+    object-fit: cover;
+  }
+  .imageCoroselContainer {
+    width: 100vw;
+    height: 210px;
+  }
+}

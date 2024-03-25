@@ -1,0 +1,22 @@
+.Logincontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  min-height: 70vh;
+}
+
+.innerContainer {
+  width: 40%;
+  padding: 15px;
+
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+}
+
+@media (max-width: 786px) {
+  .innerContainer {
+    width: 100%;
+  }
+}

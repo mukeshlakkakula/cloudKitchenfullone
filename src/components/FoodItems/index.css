@@ -1,0 +1,44 @@
+.foodItemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterForFoodContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.filterBtn {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: transparent;
+  border-color: red;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+.notActiveBtn {
+  font-weight: bold;
+  color: #696969;
+  border-style: none;
+  background-color: transparent;
+}
+
+@media (max-width: 786px) {
+  .filterBtn {
+    font-size: 15px;
+  }
+  .notActiveBtn {
+    font-size: 13px;
+  }
+  .filterForFoodContainer {
+    width: 100vw;
+    padding: 3px;
+  }
+}

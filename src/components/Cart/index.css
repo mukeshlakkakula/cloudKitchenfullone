@@ -1,0 +1,19 @@
+.notFounditemContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+@media (max-width: 786px) {
+  .headings {
+    font-size: 13px;
+  }
+  .checkOut {
+    font-size: 15px !important;
+  }
+  .totalPriceSm {
+    font-size: 20px !important;
+  }
+}
