@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:3004"],
+    origin: ["https://cloud-kitchenfullone-2v9s.vercel.app"],
     methods: ["POST", "GET"],
     credentials: true, // if your request involves cookies or authentication
   })
