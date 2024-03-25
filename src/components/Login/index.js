@@ -10,7 +10,7 @@ const Login = () => {
   let navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const urlOF = "http://localhost:5000/api/loginuser";
+    const urlOF = "https://cloud-kitchenfullone.vercel.app/api/loginuser";
     const options = {
       method: "POST",
       headers: {
