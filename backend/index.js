@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 });
 
 app.get("/", function (req, res) {
-  res.send("Hello World! to show");
+  res.send("Hello World!");
 });
 app.get("/api/fooditems", function (req, res) {
   res.send(global.food_items);
