@@ -1,6 +1,17 @@
 const express = require("express");
 
+const cors = require("cors");
+
 const app = express();
+
+app.use(
+  cors({
+    origin: ["http://localhost:3004"],
+    methods: ["POST", "GET"],
+    credentials: true, // if your request involves cookies or authentication
+  })
+);
+
 const mongoDB = require("./db");
 
 app.use((req, res, next) => {
