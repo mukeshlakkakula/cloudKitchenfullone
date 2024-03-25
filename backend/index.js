@@ -4,6 +4,7 @@ const cors = require("cors");
 
 const app = express();
 
+const PORT = process.env.PORT || 4000;
 app.use(
   cors()
 );
@@ -27,6 +28,6 @@ app.use("/api", require("./Routes/CreateUser"));
 app.use("/api", require("./Routes/FoodItems"));
 app.use("/api", require("./Routes/OrderData"));
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
   console.log("port is listening at localhost:5000");
 });
