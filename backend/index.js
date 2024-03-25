@@ -5,11 +5,7 @@ const cors = require("cors");
 const app = express();
 
 app.use(
-  cors({
-    origin: ["https://cloud-kitchenfullone-2v9s.vercel.app"],
-    methods: ["POST", "GET"],
-    credentials: true, // if your request involves cookies or authentication
-  })
+  cors()
 );
 
 const mongoDB = require("./db");
