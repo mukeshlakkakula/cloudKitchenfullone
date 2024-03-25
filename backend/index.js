@@ -11,7 +11,14 @@ app.use(
 
 const mongoDB = require("./db");
 
-
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3004");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin,X-Requested-With,Content-Type,Accept"
+  );
+  next();
+});
 
 app.get("/", function (req, res) {
   res.send("Hello World!");
