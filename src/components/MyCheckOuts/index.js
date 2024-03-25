@@ -26,7 +26,7 @@ const MyCheckOuts = () => {
       }),
     };
     const response = await fetch(
-      "http://localhost:5000/api/myOrderData",
+      "https://cloud-kitchenfullone.vercel.app/api/myOrderData",
       options
     );
 
