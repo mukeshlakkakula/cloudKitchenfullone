@@ -11,7 +11,7 @@ const Signup = () => {
   });
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const urlOF = "https://cloud-kitchenfullone.vercel.app/api/createuser";
+    const urlOF = "https://cloudkitchenfullone-backend.onrender.com/api/createuser";
     const options = {
       method: "POST",
       headers: {
