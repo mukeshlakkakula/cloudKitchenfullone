@@ -27,7 +27,7 @@ const Cart = () => {
         ],
       }),
     };
-    let response = await fetch("http://localhost:5000/api/orderData", options);
+    let response = await fetch("https://cloudkitchenfullone-backend.onrender.com/api/orderData", options);
 
     if (response.status === 200) {
       dispatch({ type: "DROP" });
