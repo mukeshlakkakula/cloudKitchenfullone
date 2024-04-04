@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import CheckoutItemDetails from "../CheckOutItemDetails";
-import { Audio } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 import "./index.css";
 const MyCheckOuts = () => {
   const apiStatusConstants = {
@@ -67,7 +67,7 @@ const MyCheckOuts = () => {
     case apiStatusConstants.inProgress:
       resultView = (
         <div className="checkOutOuterMapContainer">
-          <Audio />
+          <TailSpin />
         </div>
       );
       break;
