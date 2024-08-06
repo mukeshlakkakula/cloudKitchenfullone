@@ -23,7 +23,13 @@
 .inputC2::placeholder {
   color: #ffffff85; /* Change this to your desired color */
 }
-
+.inc2 {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  width: 95%;
+  margin: auto;
+}
 .insideConainer {
   width: 30%;
   background-color: transparent;
@@ -64,7 +70,12 @@
 }
 @media (max-width: 786px) {
   .insideConainer {
-    width: 80%;
+    width: 90%;
     margin: 3px;
+  }
+  .inc2 {
+    display: flex;
+    gap: 1px;
+    flex-direction: column;
   }
 }
