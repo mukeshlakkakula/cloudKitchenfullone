@@ -5,14 +5,15 @@ const cors = require("cors");
 const app = express();
 
 const PORT = process.env.PORT || 4000;
-app.use(
-  cors()
-);
+app.use(cors());
 
 const mongoDB = require("./db");
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://cloud-kitchenfullone-frontend.vercel.app");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://cloud-kitchenfullone-frontend.vercel.app"
+  );
   res.header(
     "Access-Control-Allow-Headers",
     "Origin,X-Requested-With,Content-Type,Accept"

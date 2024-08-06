@@ -2,21 +2,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 80vh;
+  color: #fff;
+  min-height: 100vh;
+  background-image: url("./download\ \(1\).jpg");
+  background-size: cover;
+}
+
+.inputC2 {
+  background-color: transparent;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.inputC2:focus {
+  background-color: transparent;
+  outline: none; /* Optional */
+  color: #fff;
+}
+
+.inputC2::placeholder {
+  color: #ffffff85; /* Change this to your desired color */
 }
 
 .insideConainer {
-  width: 40%;
+  width: 30%;
+  background-color: transparent;
   padding: 15px;
-
+  backdrop-filter: blur(40px);
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
 }
 
+.submitBtn {
+  margin-left: 5px;
+
+  border-radius: 25px;
+  background-color: #fff;
+  border-color: #fff;
+  border-width: 1px;
+  padding: 7px 10px;
+  width: 40%;
+  color: #0f0e0ec2;
+  font-weight: bold;
+}
+
+.submitBtn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.alUser {
+  border-radius: 25px;
+  background-color: transparent;
+  border-style: none;
+  text-decoration: underline;
+  padding: 7px;
+  color: #f7ebeb;
+
+  margin-left: 8px;
+}
 @media (max-width: 786px) {
   .insideConainer {
-    width: 100%;
+    width: 80%;
     margin: 3px;
   }
 }

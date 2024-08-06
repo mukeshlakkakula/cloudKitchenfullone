@@ -11,7 +11,8 @@ const Signup = () => {
   });
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const urlOF = "https://cloudkitchenfullone-backend.onrender.com/api/createuser";
+    const urlOF =
+      "https://cloudkitchenfullone-backend.onrender.com/api/createuser";
     const options = {
       method: "POST",
       headers: {
@@ -44,10 +45,11 @@ const Signup = () => {
             </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control inputC2"
               id="userName"
               required
               onChange={setCredentialsOf}
+              placeholder="Rahul"
               name="name"
               value={credentials.name}
             />
@@ -58,11 +60,12 @@ const Signup = () => {
             </label>
             <input
               type="email"
-              className="form-control"
+              className="form-control inputC2"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
               name="email"
               required
+              placeholder="rahul@gmail.com"
               value={credentials.email}
               onChange={setCredentialsOf}
             />
@@ -76,8 +79,9 @@ const Signup = () => {
             </label>
             <input
               type="text"
-              className="form-control"
+              className="form-control inputC2"
               id="location"
+              placeholder="Hyderabad,Nizampet ,cross road"
               name="geoLocation"
               value={credentials.geoLocation}
               onChange={setCredentialsOf}
@@ -89,24 +93,21 @@ const Signup = () => {
             </label>
             <input
               type="password"
-              className="form-control"
+              className="form-control inputC2"
               id="exampleInputPassword1"
               name="password"
+              placeholder="password"
               required
               value={credentials.password}
               onChange={setCredentialsOf}
             />
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onSubmit={handleSubmit}
-          >
-            Submit
+          <button type="submit" className="submitBtn" onSubmit={handleSubmit}>
+            Sign Up
           </button>
           <Link to="/login">
-            <button type="button" className="btn btn-danger m-3">
+            <button type="button" className="alUser">
               Already user
             </button>
           </Link>

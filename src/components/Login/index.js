@@ -10,7 +10,8 @@ const Login = () => {
   let navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const urlOF = "https://cloudkitchenfullone-backend.onrender.com/api/loginuser";
+    const urlOF =
+      "https://cloudkitchenfullone-backend.onrender.com/api/loginuser";
     const options = {
       method: "POST",
       headers: {
@@ -42,51 +43,50 @@ const Login = () => {
   return (
     <div className="Logincontainer">
       <div className="innerContainer">
-        <form onSubmit={handleSubmit} className="w-100">
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-              name="email"
-              value={credentials.email}
-              onChange={setCredentialsOf}
-            />
-            <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
-            </div>
+        <form onSubmit={handleSubmit} className=" inc2">
+          <div>
+            {" "}
+            <h1 className="loginHead">Login</h1>
           </div>
 
           <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
+            <input
+              type="email"
+              className="form-control fc2"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              name="email"
+              placeholder="Email"
+              value={credentials.email}
+              onChange={setCredentialsOf}
+            />
+          </div>
+
+          <div className="mb-3">
             <input
               type="password"
-              className="form-control"
+              className="form-control fc2"
               id="exampleInputPassword1"
               name="password"
               value={credentials.password}
               onChange={setCredentialsOf}
+              placeholder="password"
             />
+            <div id="emailHelp" className="form-text">
+              We'll never share your password with anyone else.
+            </div>{" "}
           </div>
 
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onSubmit={handleSubmit}
-          >
-            Submit
-          </button>
-          <Link to="/createuser">
-            <button type="button" className="btn btn-danger m-3">
-              I'm a new user
+          <div>
+            <button type="submit" className="nUserBtn" onSubmit={handleSubmit}>
+              Login
             </button>
-          </Link>
+            <Link to="/createuser">
+              <button type="button" className="subBtn">
+                I'm a new user
+              </button>
+            </Link>
+          </div>
         </form>
       </div>
     </div>
