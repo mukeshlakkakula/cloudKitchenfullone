@@ -39,6 +39,10 @@ const Signup = () => {
     <div className="signupContainer">
       <div className="insideConainer">
         <form onSubmit={handleSubmit} className="inc2">
+          <div>
+            {" "}
+            <h1 className="loginHead">Sign up</h1>
+          </div>
           <div className="mb-3">
             <label htmlFor="userName" className="form-label ">
               User Name

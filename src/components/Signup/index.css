@@ -25,7 +25,7 @@
 }
 .inc2 {
   display: flex;
-  gap: 15px;
+  gap: 5px;
   flex-direction: column;
   width: 95%;
   margin: auto;

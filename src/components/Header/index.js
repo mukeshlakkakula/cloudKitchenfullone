@@ -1,12 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 import { useCart } from "../ContextReducer";
+import logo from "./c62324e77b38a2f323674c10b08aa65b-removebg-preview.png";
 
 import "./index.css";
-import { useState } from "react";
+// import { useState } from "react";
 
 const Header = () => {
-  const [activeRoute, setActiveRoute] = useState("home");
+  const location = useLocation();
 
   const data = useCart();
   const badge =
@@ -36,22 +37,16 @@ const Header = () => {
         <img
           style={{ width: "100px" }}
           className="imgLogosm"
-          src="https://i.pinimg.com/564x/c6/23/24/c62324e77b38a2f323674c10b08aa65b.jpg"
+          src={logo}
           alt="kitchenLogo"
-          value="home"
-          onClick={() => {
-            setActiveRoute("home");
-          }}
+          value="/"
         />
       </Link>
 
       <Link to="/">
         <button
-          className={activeRoute === "home" ? "activeBtn" : "notActiveBtn"}
-          value="home"
-          onClick={() => {
-            setActiveRoute("home");
-          }}
+          className={location.pathname === "/" ? "activeBtn" : "notActiveBtn"}
+          value="/"
         >
           Home
         </button>
@@ -64,11 +59,10 @@ const Header = () => {
               <button
                 type="button"
                 value="Checkouts"
-                onClick={() => {
-                  setActiveRoute("Checkouts");
-                }}
                 className={
-                  activeRoute === "Checkouts" ? "activeBtn" : "notActiveBtn"
+                  location.pathname === "/mycheckouts"
+                    ? "activeBtn"
+                    : "notActiveBtn"
                 }
               >
                 my Checkouts
@@ -77,12 +71,9 @@ const Header = () => {
             <Link to="/cart">
               <button
                 type="button"
-                value="Cart"
-                onClick={() => {
-                  setActiveRoute("Cart");
-                }}
+                value="/cart"
                 className={
-                  activeRoute === "Cart" ? "activeBtn" : "notActiveBtn"
+                  location.pathname === "/cart" ? "activeBtn" : "notActiveBtn"
                 }
               >
                 my Cart {badge}
@@ -97,12 +88,12 @@ const Header = () => {
             <Link to="/login">
               <button
                 className={
-                  activeRoute === "Login" ? "activeBtn" : "notActiveBtn"
+                  location.pathname === "/login" ? "activeBtn" : "notActiveBtn"
                 }
-                value="Login"
-                onClick={() => {
-                  setActiveRoute("Login");
-                }}
+                value="/login"
+                // onClick={() => {
+                //   setActiveRoute("/login");
+                // }}
               >
                 Login
               </button>
@@ -110,12 +101,11 @@ const Header = () => {
             <Link to="/createuser">
               <button
                 className={
-                  activeRoute === "Signup" ? "activeBtn" : "notActiveBtn"
+                  location.pathname === "/createuser"
+                    ? "activeBtn"
+                    : "notActiveBtn"
                 }
-                value="Signup"
-                onClick={() => {
-                  setActiveRoute("Signup");
-                }}
+                value="/createuser"
               >
                 Signup
               </button>
