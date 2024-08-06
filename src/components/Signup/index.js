@@ -38,9 +38,9 @@ const Signup = () => {
   return (
     <div className="signupContainer">
       <div className="insideConainer">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="inc2">
           <div className="mb-3">
-            <label htmlFor="userName" className="form-label">
+            <label htmlFor="userName" className="form-label ">
               User Name
             </label>
             <input
@@ -102,15 +102,16 @@ const Signup = () => {
               onChange={setCredentialsOf}
             />
           </div>
-
-          <button type="submit" className="submitBtn" onSubmit={handleSubmit}>
-            Sign Up
-          </button>
-          <Link to="/login">
-            <button type="button" className="alUser">
-              Already user
+          <div>
+            <button type="submit" className="submitBtn" onSubmit={handleSubmit}>
+              Sign Up
             </button>
-          </Link>
+            <Link to="/login">
+              <button type="button" className="alUser">
+                Already user
+              </button>
+            </Link>
+          </div>
         </form>
       </div>
     </div>
