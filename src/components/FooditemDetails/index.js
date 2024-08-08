@@ -2,6 +2,7 @@ import "./index.css";
 
 import { useDispatchCart, useCart } from "../ContextReducer";
 import { useState } from "react";
+import { FaCartShopping } from "react-icons/fa6";
 
 const FooditemDetails = (props) => {
   const { each } = props;
@@ -96,13 +97,10 @@ const FooditemDetails = (props) => {
             </option>
           ))}
         </select>
-        <hr />
+
         <div className="cartAndprice ">
-          <button
-            className="btn btn-primary text-center"
-            onClick={handleAddToCart}
-          >
-            Add to Cart
+          <button className="addcartBtn" onClick={handleAddToCart}>
+            <FaCartShopping />
           </button>
         </div>
       </div>
