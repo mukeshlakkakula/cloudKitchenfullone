@@ -12,7 +12,7 @@ const mongoDB = require("./db");
 app.use((req, res, next) => {
   res.setHeader(
     "Access-Control-Allow-Origin",
-    "https://cloud-kitchenfullone-frontend.vercel.app"
+    "*"
   );
   res.header(
     "Access-Control-Allow-Headers",
