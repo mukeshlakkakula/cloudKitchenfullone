@@ -127,7 +127,7 @@ const Fooditems = () => {
         onSubmit={searchFooditem}
       >
         <input
-          className="form-control mr-sm-2"
+          className="form-control mr-sm-2 searchContainer"
           type="search"
           placeholder="Search"
           value={searchVal}

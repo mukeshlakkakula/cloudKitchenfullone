@@ -3,9 +3,31 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-color: #000;
+  color: #fff;
   min-height: 100vh;
 }
+.emptyImg {
+  width: 20%;
+}
 
+.tableContainerouter {
+  background-color: #000;
+  padding-top: 70px;
+  min-height: 100vh;
+}
+.totalPriceSm {
+  color: #fff;
+  background-color: #000;
+}
+td {
+  color: #fff;
+  background-color: #000;
+}
+.thIndex {
+  color: #fff;
+  background-color: #000;
+}
 @media (max-width: 786px) {
   .headings {
     font-size: 13px;
@@ -15,5 +37,9 @@
   }
   .totalPriceSm {
     font-size: 20px !important;
+  }
+
+  .emptyImg {
+    width: 50%;
   }
 }

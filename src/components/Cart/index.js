@@ -1,5 +1,6 @@
 import { useDispatchCart, useCart } from "../ContextReducer";
 
+import imageCartempty from "./928bb331a32654ba76a4fc84386f3851-removebg-preview.png";
 import "./index.css";
 
 const Cart = () => {
@@ -27,7 +28,10 @@ const Cart = () => {
         ],
       }),
     };
-    let response = await fetch("https://cloudkitchenfullone-backend.onrender.com/api/orderData", options);
+    let response = await fetch(
+      "https://cloudkitchenfullone-backend.onrender.com/api/orderData",
+      options
+    );
 
     if (response.status === 200) {
       dispatch({ type: "DROP" });
@@ -36,7 +40,7 @@ const Cart = () => {
 
   let totalPrice = data.reduce((total, food) => total + food.finalPrice, 0);
   const tableHeadings = (
-    <div className="container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md">
+    <div className="container m-auto table-responsive  table-responsive-sm table-responsive-md ">
       <table className="table table-hover ">
         <thead className=" text-success fs-4">
           <tr>
@@ -61,7 +65,9 @@ const Cart = () => {
         <tbody>
           {data.map((food, index) => (
             <tr key={food.id + food.size}>
-              <th scope="row">{index + 1}</th>
+              <th className="thIndex" scope="row">
+                {index + 1}
+              </th>
               <td>{food.name}</td>
               <td>{food.qty}</td>
               <td>{food.size}</td>
@@ -102,15 +108,11 @@ const Cart = () => {
         <p className="mt-5 w-100 text-center fs-3">
           You not added any Item to the Cart{" "}
         </p>
-        <img
-          className="w-50 "
-          src="https://i.pinimg.com/564x/92/8b/b3/928bb331a32654ba76a4fc84386f3851.jpg"
-          alt="emptyCart"
-        />
+        <img className="emptyImg" src={imageCartempty} alt="emptyCart" />
       </div>
     );
   }
-  return <div>{tableHeadings}</div>;
+  return <div className="tableContainerouter">{tableHeadings}</div>;
 };
 
 export default Cart;

@@ -12,6 +12,21 @@
   justify-content: space-around;
 }
 
+.searchContainer {
+  background-color: transparent;
+  border-radius: 25px;
+  min-width: 80%;
+  color: #fff;
+}
+.searchContainer:focus {
+  background-color: transparent;
+  outline: none; /* Optional */
+  color: #fff;
+}
+.searchContainer::placeholder {
+  color: #ffffffbe; /* Change this to your desired color */
+}
+
 .filterBtn {
   color: red;
   font-weight: bold;

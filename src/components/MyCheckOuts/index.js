@@ -85,7 +85,11 @@ const MyCheckOuts = () => {
     default:
       resultView = null;
   }
-  return <div className="m-auto w-100 text-center h-50">{resultView}</div>;
+  return (
+    <div className="MycheckOuterContainer">
+      <div className="m-auto w-100 text-center h-50">{resultView}</div>{" "}
+    </div>
+  );
 };
 
 export default MyCheckOuts;

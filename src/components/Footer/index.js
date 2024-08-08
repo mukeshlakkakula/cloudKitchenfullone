@@ -12,7 +12,7 @@ const Footer = () => (
       <p className="footPara">We always follow your feedback</p>
     </div>
     <div>
-      <h1>Follow us on </h1>
+      <h1 className="followHead">Follow us on </h1>
       <div className="logoContainer">
         <img
           className="iconLogo"

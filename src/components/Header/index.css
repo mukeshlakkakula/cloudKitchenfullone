@@ -24,7 +24,9 @@
   border-radius: 5px;
   background-color: transparent;
   font-weight: bold;
-  color: rgb(186, 82, 82);
+  color: rgb(255, 255, 255);
+  border-style: none;
+  border-color: #fff;
 }
 
 .activeBtn {
@@ -76,6 +78,7 @@
     align-items: center;
     padding-left: 2px;
     padding-right: 2px;
+    height: auto;
     gap: 10px;
     margin-bottom: 5px;
   }

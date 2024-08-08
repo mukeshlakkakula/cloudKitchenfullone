@@ -5,4 +5,12 @@
   align-items: center;
   padding-left: 10%;
   padding-right: 10%;
+  padding-top: 30px;
+  background-color: #000000f0;
+}
+
+@media (max-width: 786px) {
+  .HomeContainer {
+    padding-top: 50px;
+  }
 }

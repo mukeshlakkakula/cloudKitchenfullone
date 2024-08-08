@@ -1,5 +1,5 @@
 import { Link, useNavigate, useLocation } from "react-router-dom";
-
+import { MdLogout } from "react-icons/md";
 import { useCart } from "../ContextReducer";
 import logo from "./c62324e77b38a2f323674c10b08aa65b-removebg-preview.png";
 
@@ -80,7 +80,7 @@ const Header = () => {
               </button>
             </Link>
             <button className="lgoutBtn" onClick={removeToken}>
-              Logout
+              <MdLogout />
             </button>
           </>
         ) : (

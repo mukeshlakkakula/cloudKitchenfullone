@@ -1,10 +1,11 @@
 .footerContainer {
-  background-color: #e1eded;
+  background-color: #0b0b0b;
   min-width: 100%;
   display: flex;
   justify-content: space-around;
 
   align-items: center;
+  color: #fff;
   padding: 20px;
   gap: 10px;
   margin-top: 20px;
@@ -30,4 +31,19 @@
 .footPara {
   font-weight: bold;
   font-family: "Roboto";
+}
+
+@media (max-width: 786px) {
+  .iconLogo {
+    width: 30px;
+    height: 30px;
+  }
+  .footPara {
+    font-size: 17px;
+  }
+
+  .followHead {
+    font-size: 20px;
+    text-align: center;
+  }
 }
