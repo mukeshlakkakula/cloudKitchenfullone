@@ -2,12 +2,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000;
+  overflow: auto;
+  margin-top: 5px;
+
+  width: 60vw;
+}
+
+.resultviewOuterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
   width: 100%;
 }
 
 .MycheckOuterContainer {
-  background-color: #000;
   height: 100vh;
+  width: 100%;
   padding-top: 70px;
+  background-image: url("./download\ \(1\).jpg");
+  background-size: cover;
+  overflow: auto;
+}
+
+@media (max-width: 786px) {
+  .checkOutOuterMapContainer {
+    width: 90vw;
+  }
 }

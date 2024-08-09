@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import CheckoutItemDetails from "../CheckOutItemDetails";
+
+import imageView from "./928bb331a32654ba76a4fc84386f3851-removebg-preview.png";
 import { TailSpin } from "react-loader-spinner";
 import "./index.css";
 const MyCheckOuts = () => {
@@ -67,18 +69,15 @@ const MyCheckOuts = () => {
     case apiStatusConstants.inProgress:
       resultView = (
         <div className="checkOutOuterMapContainer">
-          <TailSpin />
+          <TailSpin color="white" />
         </div>
       );
       break;
     case apiStatusConstants.failure:
       resultView = (
-        <div>
+        <div className="notFounditemContainer">
           <p className="p-4 fs-4">No Item is added in CheckOuts... </p>
-          <img
-            src="https://i.pinimg.com/564x/92/8b/b3/928bb331a32654ba76a4fc84386f3851.jpg"
-            alt="emptyCart"
-          />
+          <img src={imageView} alt="emptyCart" className="emptyImg" />
         </div>
       );
       break;
@@ -87,7 +86,7 @@ const MyCheckOuts = () => {
   }
   return (
     <div className="MycheckOuterContainer">
-      <div className="m-auto w-100 text-center h-50">{resultView}</div>{" "}
+      <div className="resultviewOuterContainer">{resultView}</div>{" "}
     </div>
   );
 };

@@ -45,6 +45,16 @@
   background-color: transparent;
 }
 
+.loaderContainer {
+  width: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 40vh;
+}
+
 @media (max-width: 786px) {
   .filterBtn {
     font-size: 15px;
@@ -55,5 +65,9 @@
   .filterForFoodContainer {
     width: 100vw;
     padding: 3px;
+  }
+  .loaderPara {
+    font-size: 13px;
+    text-align: center;
   }
 }

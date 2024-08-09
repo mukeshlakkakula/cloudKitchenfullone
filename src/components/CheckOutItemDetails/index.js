@@ -8,7 +8,7 @@ const CheckoutItemDetails = (props) => {
       const Date = (
         <div key={each.Order_date[1]}>
           {" "}
-          <p className="text-primary fw-bold">
+          <p className="dateTime">
             {each.Order_date[0]} Time {each.Order_date[1]}
           </p>
         </div>
@@ -18,17 +18,20 @@ const CheckoutItemDetails = (props) => {
     return (
       <div key={each.id} className="CheckOutDetailsbtmContainer">
         <p className="para1">
+          {each.qty} {each.size} {each.name} = {each.finalPrice} ₹
+        </p>
+        {/* <p>
           <span>Item</span>: {each.name}
         </p>
         <p className="para1">
-          <span>Size</span>: {each.size}
+          <span>S</span>: {each.size}
         </p>
         <p className="para1">
-          <span>Quantity</span>: {each.qty}
+          <span>Q</span>:
         </p>
         <p className="para1">
-          <span>Price</span>: {each.finalPrice} Rs
-        </p>
+          <span> ₹</span>: {each.finalPrice} Rs
+        </p> */}
       </div>
     );
   });

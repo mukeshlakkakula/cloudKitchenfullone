@@ -41,7 +41,7 @@ const Cart = () => {
   let totalPrice = data.reduce((total, food) => total + food.finalPrice, 0);
   const tableHeadings = (
     <div className="container m-auto table-responsive  table-responsive-sm table-responsive-md ">
-      <table className="table table-hover ">
+      <table className="table ">
         <thead className=" text-success fs-4">
           <tr>
             <th scope="col" className="headings">
@@ -68,14 +68,14 @@ const Cart = () => {
               <th className="thIndex" scope="row">
                 {index + 1}
               </th>
-              <td>{food.name}</td>
-              <td>{food.qty}</td>
-              <td>{food.size}</td>
-              <td>{food.finalPrice}</td>
+              <td className="itemsInTbl">{food.name}</td>
+              <td className="itemsInTbl">{food.qty}</td>
+              <td className="itemsInTbl">{food.size}</td>
+              <td className="itemsInTbl">{food.finalPrice}</td>
               <td>
                 <button
                   type="button"
-                  className="btn rounded-circle btn-outline-secondary bg-light "
+                  className="deleteBtnIntable"
                   onClick={() => {
                     dispatch({ type: "REMOVE", index: index });
                   }}
@@ -91,10 +91,7 @@ const Cart = () => {
         <h1 className="fs-2 totalPriceSm">Total Price: {totalPrice}/-</h1>
       </div>
       <div>
-        <button
-          className="btn bg-success mt-5 fs-4 font-weight-bold text-white checkOut"
-          onClick={handleCheckOut}
-        >
+        <button className="checkOutbtn" onClick={handleCheckOut}>
           {" "}
           Check Out{" "}
         </button>

@@ -112,7 +112,15 @@ const Fooditems = () => {
       break;
 
     case apiStatusConstants.inProgress:
-      resultView = <Audio />;
+      resultView = (
+        <div className="loaderContainer">
+          <p className="loaderPara">
+            Due to free hosting on render, the backend is taking time to start
+            for the first time, just wait a moment it will definitely start.
+          </p>
+          <Audio color="white" />
+        </div>
+      );
       break;
     case apiStatusConstants.failure:
       resultView = <h1>Something went wrong Pleace try again ....</h1>;

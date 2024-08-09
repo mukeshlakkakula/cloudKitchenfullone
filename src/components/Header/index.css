@@ -27,6 +27,29 @@
   color: rgb(255, 255, 255);
   border-style: none;
   border-color: #fff;
+  position: relative;
+}
+
+.lgoutBtn::after {
+  content: "Log Out";
+  position: absolute;
+  top: 100%; /* Position the tooltip above the icon */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #ffffff;
+  padding: 5px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.lgoutBtn:hover::after {
+  opacity: 1;
+  visibility: visible;
 }
 
 .activeBtn {
