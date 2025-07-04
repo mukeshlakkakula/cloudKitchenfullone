@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const mongooseUrl =
-  "mongodb+srv://Mukesh:Mukesh@950@cluster0.phwub5z.mongodb.net/cloudFood?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://Mukesh:Mukesh%40950@cluster0.phwub5z.mongodb.net/cloudFood?retryWrites=true&w=majority&appName=Cluster0";
 
 // Mukesh@950,cloudFood
 const mongoDB = async () => {
