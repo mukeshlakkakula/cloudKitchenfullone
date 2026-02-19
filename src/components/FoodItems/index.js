@@ -1,23 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import FooditemDetails from "../FooditemDetails";
 import { Audio } from "react-loader-spinner";
 
 import "./index.css";
+
+const apiStatusConstants = {
+  initial: "INITAIL",
+  success: "SUCCESS",
+  inProgress: "INPROGRESS",
+  failure: "FAILURE",
+};
+
 const Fooditems = () => {
   const [fooditems, setFooditems] = useState([]);
   const [foodCat, setFoodCat] = useState([]);
   const [activeFilter, setActiveFilter] = useState("All");
 
-  const apiStatusConstants = {
-    initial: "INITAIL",
-    success: "SUCCESS",
-    inProgress: "INPROGRESS",
-    failure: "FAILURE",
-  };
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
 
-  
-  const fetchItems = async () => {
+  const fetchItems = useCallback(async () => {
     setApiStatus(apiStatusConstants.inProgress);
     const options = {
       method: "GET",
@@ -38,7 +39,7 @@ const Fooditems = () => {
     }
 
     // console.log(data);
-  };
+  }, []);
 
   const [searchVal, setSerchval] = useState("");
   const searchFooditem = (event) => {
@@ -47,7 +48,7 @@ const Fooditems = () => {
 
   useEffect(() => {
     fetchItems();
-  }, []);
+  }, [fetchItems]);
 
   const searchChange = (event) => {
     setSerchval(event.target.value);

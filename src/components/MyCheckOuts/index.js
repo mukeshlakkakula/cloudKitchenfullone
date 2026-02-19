@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import CheckoutItemDetails from "../CheckOutItemDetails";
 
 import imageView from "./928bb331a32654ba76a4fc84386f3851-removebg-preview.png";
 import { TailSpin } from "react-loader-spinner";
 import "./index.css";
+
+const apiStatusConstants = {
+  initial: "INITAIL",
+  success: "SUCCESS",
+  inProgress: "INPROGRESS",
+  failure: "FAILURE",
+};
+
 const MyCheckOuts = () => {
-  const apiStatusConstants = {
-    initial: "INITAIL",
-    success: "SUCCESS",
-    inProgress: "INPROGRESS",
-    failure: "FAILURE",
-  };
   const [checkoutData, setCheckoutData] = useState([]);
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
-  const fetchMyOrder = async () => {
+  const fetchMyOrder = useCallback(async () => {
     setApiStatus(apiStatusConstants.inProgress);
 
     const options = {
@@ -29,7 +31,7 @@ const MyCheckOuts = () => {
     };
     const response = await fetch(
       "https://cloudkitchenfullone-backend.onrender.com/api/myOrderData",
-      options
+      options,
     );
 
     const data = await response.json();
@@ -41,10 +43,10 @@ const MyCheckOuts = () => {
       setCheckoutData([]);
       setApiStatus(apiStatusConstants.failure);
     }
-  };
+  }, []);
   useEffect(() => {
     fetchMyOrder();
-  }, []);
+  }, [fetchMyOrder]);
 
   const showCheckouts =
     checkoutData.length !== 0 ? checkoutData.slice(0).reverse() : "";
