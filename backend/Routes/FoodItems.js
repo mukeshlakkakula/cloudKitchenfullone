@@ -1,16 +1,19 @@
-const express = require("express");
+import express from "express";
 
 const router = express.Router();
 
-router.post("/fooditems", (req, res) => {
+router.get("/fooditems", (req, res) => {
   try {
-    res.send({
+    if (!global.food_items || !global.food_category) {
+      return res.status(500).json({ error: "Data not loaded yet" });
+    }
+    res.json({
       fooditems: global.food_items,
       foodCategory: global.food_category,
     });
   } catch (error) {
-    res.send("server error");
+    res.status(500).json({ error: "Server error", message: error.message });
   }
 });
 
-module.exports = router;
+export default router;

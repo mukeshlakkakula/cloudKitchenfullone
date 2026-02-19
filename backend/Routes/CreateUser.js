@@ -1,13 +1,11 @@
-const express = require("express");
+import express from "express";
+import User from "../models/User.js";
+import { body, validationResult } from "express-validator";
+import jwt from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 const router = express.Router();
-
-const User = require("../models/User");
-const { body, validationResult } = require("express-validator");
-
-const jwt = require("jsonwebtoken");
 const jwtSecret = "myNameismksIamfromprp#@thisisforjwtsecret";
-const bcrypt = require("bcrypt");
 
 router.post(
   "/createuser",
@@ -38,7 +36,7 @@ router.post(
     } catch (err) {
       res.json({ success: false });
     }
-  }
+  },
 );
 
 router.post(
@@ -67,7 +65,7 @@ router.post(
 
       const pwdCompare = await bcrypt.compare(
         req.body.password,
-        userData.password
+        userData.password,
       );
       if (!pwdCompare) {
         return res
@@ -86,7 +84,7 @@ router.post(
     } catch (err) {
       res.json({ success: false });
     }
-  }
+  },
 );
 
-module.exports = router;
+export default router;

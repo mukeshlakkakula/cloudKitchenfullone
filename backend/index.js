@@ -1,30 +1,32 @@
-const express = require("express");
-
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import mongoDB from "./db.js";
 
 const app = express();
-
 const PORT = process.env.PORT || 4000;
-app.use(cors());
-
-const mongoDB = require("./db");
 
 app.use(
   cors({
-    origin: "https://cloud-kitchenfullone-frontend.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
-  })
+  }),
 );
+
 app.get("/", function (req, res) {
   res.send("Hello World!");
 });
 
 app.use(express.json());
-app.use("/api", require("./Routes/CreateUser"));
-app.use("/api", require("./Routes/FoodItems"));
-app.use("/api", require("./Routes/OrderData"));
+
+import createUserRouter from "./Routes/CreateUser.js";
+import foodItemsRouter from "./Routes/FoodItems.js";
+import orderDataRouter from "./Routes/OrderData.js";
+
+app.use("/api", createUserRouter);
+app.use("/api", foodItemsRouter);
+app.use("/api", orderDataRouter);
 
 app.listen(PORT, () => {
-  console.log("port is listening at localhost:4000");
+  console.log(`port is listening at localhost:${PORT}`);
 });

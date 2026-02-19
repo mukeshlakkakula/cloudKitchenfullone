@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import Order from "../models/Orders.js";
+
 const router = express.Router();
-const Order = require("../models/Orders");
 
 router.post("/orderData", async (req, res) => {
   let data = req.body.order_data;
@@ -24,7 +25,7 @@ router.post("/orderData", async (req, res) => {
     try {
       await Order.findOneAndUpdate(
         { email: req.body.email },
-        { $push: { order_data: [data] } }
+        { $push: { order_data: [data] } },
       ).then(() => {
         res.json({ success: true });
       });
@@ -44,4 +45,4 @@ router.post("/myOrderData", async (req, res) => {
   }
 });
 
-module.exports = router;
+export default router;

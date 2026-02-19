@@ -1,12 +1,14 @@
 import { useDispatchCart, useCart } from "../ContextReducer";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import imageCartempty from "./928bb331a32654ba76a4fc84386f3851-removebg-preview.png";
 import "./index.css";
 
 const Cart = () => {
   let data = useCart();
-
   let dispatch = useDispatchCart();
+  let navigate = useNavigate();
 
   const handleCheckOut = async () => {
     let userEmail = localStorage.getItem("userEmail");
@@ -28,13 +30,19 @@ const Cart = () => {
         ],
       }),
     };
-    let response = await fetch(
-      "https://cloudkitchenfullone-backend.onrender.com/api/orderData",
-      options
-    );
+    let response = await fetch("http://localhost:4000/api/orderData", options);
 
     if (response.status === 200) {
+      toast.success("Order placed successfully!", {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
       dispatch({ type: "DROP" });
+      navigate("/mycheckouts");
     }
   };
 

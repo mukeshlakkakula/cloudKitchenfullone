@@ -1,7 +1,7 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const mongooseUrl =
-  "mongodb+srv://Mukesh:Mukesh%40950@cluster0.phwub5z.mongodb.net/cloudFood?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://Mukesh:Mukesh%40950@cluster0.phwub5z.mongodb.net/cloudFood?retryWrites=true&w=majority";
 
 // Mukesh@950,cloudFood
 const mongoDB = async () => {
@@ -13,9 +13,8 @@ const mongoDB = async () => {
     console.log("Connected to MongoDB");
     const fetched_data1 = await mongoose.connection.db.collection("foodItems");
     let dataOfFoodItems = await fetched_data1.find({}).toArray();
-    const fetched_data2 = await mongoose.connection.db.collection(
-      "foodCategory"
-    );
+    const fetched_data2 =
+      await mongoose.connection.db.collection("foodCategory");
 
     global.food_items = dataOfFoodItems;
     let dataOfFoodCategory = await fetched_data2.find({}).toArray();
@@ -25,4 +24,6 @@ const mongoDB = async () => {
   }
 };
 
-module.exports = mongoDB();
+await mongoDB();
+
+export default mongoDB;

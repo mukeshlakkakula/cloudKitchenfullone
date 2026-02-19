@@ -16,15 +16,16 @@ const Fooditems = () => {
   };
   const [apiStatus, setApiStatus] = useState(apiStatusConstants.initial);
 
+  
   const fetchItems = async () => {
     setApiStatus(apiStatusConstants.inProgress);
     const options = {
-      method: "POST",
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    let url = "https://cloudkitchenfullone-backend.onrender.com/api/fooditems";
+    let url = "http://localhost:4000/api/fooditems";
     const response = await fetch(url, options);
     const data = await response.json();
 
@@ -81,7 +82,7 @@ const Fooditems = () => {
   );
   let ShowFooditems = "";
   let filter = fooditems.filter((each) =>
-    each.name.toLowerCase().includes(searchVal.toLowerCase())
+    each.name.toLowerCase().includes(searchVal.toLowerCase()),
   );
   if (activeFilter === "All") {
     ShowFooditems = filter.map((each) => (
@@ -91,7 +92,7 @@ const Fooditems = () => {
     filter = fooditems.filter(
       (each) =>
         each.category === activeFilter &&
-        each.name.toLowerCase().includes(searchVal.toLowerCase())
+        each.name.toLowerCase().includes(searchVal.toLowerCase()),
     );
 
     ShowFooditems = filter.map((each) => (

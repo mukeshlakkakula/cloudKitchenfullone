@@ -6,8 +6,8 @@ const CartDispatchContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD":
-      // console.log("added ADD");
-      // console.log("action size", action.size);
+      console.log("added ADD");
+      console.log("action size", action.size);
       return [
         ...state,
         {

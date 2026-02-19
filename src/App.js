@@ -9,12 +9,15 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ContextReducer from "./components/ContextReducer";
 import MyCheckOuts from "./components/MyCheckOuts";
 import NotFound from "./components/NotFound";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <ContextReducer>
       <BrowserRouter>
         <Header />
+        <ToastContainer />
 
         <Routes>
           <Route exact path="/" Component={Home} />

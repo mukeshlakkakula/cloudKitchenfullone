@@ -28,7 +28,7 @@ const MyCheckOuts = () => {
       }),
     };
     const response = await fetch(
-      "https://cloudkitchenfullone-backend.onrender.com/api/myOrderData",
+      "http://localhost:4000/api/myOrderData",
       options
     );
 
