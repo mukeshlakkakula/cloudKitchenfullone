@@ -30,7 +30,7 @@ const Cart = () => {
         ],
       }),
     };
-    let response = await fetch("http://localhost:4000/api/orderData", options);
+    let response = await fetch("https://cloudkitchenfullone-backend.onrender.com/api/orderData", options);
 
     if (response.status === 200) {
       toast.success("Order placed successfully!", {
