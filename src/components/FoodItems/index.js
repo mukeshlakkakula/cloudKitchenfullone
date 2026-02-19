@@ -25,7 +25,7 @@ const Fooditems = () => {
         "Content-Type": "application/json",
       },
     };
-    let url = "http://localhost:4000/api/fooditems";
+    let url = "https://cloudkitchenfullone-backend.onrender.com/api/fooditems";
     const response = await fetch(url, options);
     const data = await response.json();
 

@@ -12,7 +12,7 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const urlOF =
-      "http://localhost:4000/api/createuser";
+      "https://cloudkitchenfullone-backend.onrender.com/api/createuser";
     const options = {
       method: "POST",
       headers: {
